@@ -1,0 +1,84 @@
+#!/bin/bash
+source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/add_seperator.sh"
+source "$CONFIG_DIR/icons.sh"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEMS_DIR="$CONFIG_DIR/items"
+
+# General Bar Properties
+FONT="SF Pro"
+OUTER_PADDINGS=5
+INNER_PADDINGS=5
+X_BAR_PADDING=12
+BAR_HEIGHT=34
+
+##### Bar Appearance #####
+bar=(
+  height=$BAR_HEIGHT
+  margin=5
+  shadow=on
+  shadow.color=$TEXT_MOON
+  padding_left=0
+  padding_right=$X_BAR_PADDING
+  color=$BAR_COLOR
+  border_width=1
+  border_color=$BORDER_COLOR
+  corner_radius=14
+  blur_radius=40
+  notch_width=180
+)
+
+defaults=(
+  updates=when_shown
+  icon.font="$FONT:Regular:14.0"
+  icon.color=$ICON_COLOR
+  padding_left=$OUTER_PADDINGS
+  padding_right=$OUTER_PADDINGS
+  icon.padding_left=$INNER_PADDINGS
+  icon.padding_right=$INNER_PADDINGS
+  label.font="$FONT:Semibold:13.0"
+  label.color=$LABEL_COLOR
+  label.padding_left=$INNER_PADDINGS
+  label.padding_right=$INNER_PADDINGS
+  background.corner_radius=8
+  popup.y_offset=4
+  popup.background.border_width=1
+  popup.background.corner_radius=6
+  popup.background.border_color=$POPUP_BORDER_COLOR
+  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+)
+
+zones=(
+  background.height=$(($BAR_HEIGHT - 8))
+  background.border_width=2
+  background.border_color=$HIGH_MED_MOON
+  background.color=$OVERLAY_MOON
+  background.corner_radius=20
+  blur_radius=24
+)
+
+sketchybar --bar "${bar[@]}" --default "${defaults[@]}"
+
+##### Left Side Items #####
+source $ITEMS_DIR/snoopy.sh
+source $ITEMS_DIR/spaces.sh
+#source $ITEMS_DIR/front_app.sh
+
+##### Right Side Items #####
+source $ITEMS_DIR/calendar.sh
+source $ITEMS_DIR/volume.sh
+source $ITEMS_DIR/battery.sh
+source $ITEMS_DIR/wifi.sh
+
+### Creates zones for bar items
+sketchybar --add bracket calendar-zone calendar \
+  --set calendar-zone "${zones[@]}" \
+  --add bracket utilities-zone volume battery wifi \
+  --set utilities-zone "${zones[@]}" \
+  --add bracket spaces '/space\..*/' \
+  --set spaces "${zones[@]}"
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update
