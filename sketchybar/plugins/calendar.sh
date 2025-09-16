@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Updates clock at next minute
 sleep $((59 - $(date '+%S')))
 while [[ $(date '+%S') != "00" ]]; do

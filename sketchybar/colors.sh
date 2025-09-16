@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### Colors for items in sketchybar
+
 export BASE_MOON=0xff232136
 export SURFACE_MOON=0xff2a273f
 export OVERLAY_MOON=0xff393552

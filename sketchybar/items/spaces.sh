@@ -1,5 +1,8 @@
 #!/bin/bash
 
+### Displays each open space with the respective core app for that space
+# Note: The app icons are taken from the icon-map_fn script (sketchybar font book)
+
 source "$CONFIG_DIR/colors.sh"
 
 # Variables
@@ -9,7 +12,7 @@ ZEN_ICON="$($PLUGIN_DIR/icon_map_fn.sh "Zen")"
 OBSIDIAN_ICON="$($PLUGIN_DIR/icon_map_fn.sh "Obsidian")"
 MUSIC_ICON="$($PLUGIN_DIR/icon_map_fn.sh "Music")"
 
-##### Adding Mission Control Space Indicators #####
+# Space Indicators
 SPACE_ICONS=("$BRAVE_ICON" "$ZEN_ICON" "$OBSIDIAN_ICON" "$MUSIC_ICON" "5" "6" "7" "8" "9" "10")
 SPACE_LABELS=("Brave" "Zen" "Obsidian" "Music" "" "" "" "" "" "")
 

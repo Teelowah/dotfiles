@@ -1,5 +1,6 @@
 #!/bin/bash
 
+### Icons for items in sketchybar
 # Note: All of these symbols are copied from SF Symbols
 
 ### Battery Icons
@@ -18,5 +19,10 @@ export LOW_BATTERY_25="􀛩"
 export WIFI_ON="􀙇"
 export WIFI_OFF="􀙈"
 
-### Apple Logo
+### Apple Icons
 export APPLE_LOGO="􀣺"
+export MUSIC_NOTE="􀑪"
+export MUSIC_NOTE_SLASH="􃑓"
+
+### Keyboard Icons
+export KBD_LIGHT_LOGO="􀇮"

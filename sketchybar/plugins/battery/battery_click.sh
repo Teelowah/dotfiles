@@ -1,8 +1,11 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
+### Toggles low power mode shortcut on click
 
+source "$CONFIG_DIR/colors.sh"
 LPM_SHORTCUT_NAME="Toggle Low Power"
+
+# Runs the low power mode shortcut
 PRE_LPM_STATUS="$(pmset -g batt | grep -o 'lowpowermode')" # Gets current LPM status
 shortcuts run "$LPM_SHORTCUT_NAME" # Runs the LPM shortcut
 sleep 0.5

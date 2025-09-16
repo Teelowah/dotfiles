@@ -1,7 +1,11 @@
 #!/bin/bash
 
+### Picture of Snoopy in the place of the logo
+# Note: The image is set as the background element
+
 snoopy=(
   #icon="􀣺" # Puts apple logo from SF Symbols
+  
   padding_left=$X_BAR_PADDING
   padding_right=10
   icon.drawing=off
@@ -24,8 +28,8 @@ snoopy=(
   #background.corner_radius=20
   #background.drawing=offPOPUP_CLICK_SCRIPT"
   #popup.height=35
+
 )
 
 sketchybar --add item snoopy left \
     --set snoopy "${snoopy[@]}"
-    #--subscribe logo front_app_switched mouse.clicked # Switches to the front app when clicked

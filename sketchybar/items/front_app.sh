@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### Displays the current active app
+
 front_app=(
      background.color=$ACCENT_COLOR
      icon.color=$FOAM_MOON 

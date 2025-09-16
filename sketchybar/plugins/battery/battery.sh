@@ -1,5 +1,7 @@
 #!/bin/sh
 
+### Displays the current battery percentage and corresponding battery icon
+
 source "$CONFIG_DIR/icons.sh"
 source "$CONFIG_DIR/colors.sh"
 
@@ -29,7 +31,7 @@ if [[ "$CHARGING" != "" ]]; then
 fi
 
 if [[ "$LOW_POWER_MODE" != "0" ]]; then
-  ICON_COLOR=$GOLD_MOON
+  ICON_COLOR=$GOLD_MOON # Makes the icon yellow if low power mode is on
 else
   ICON_COLOR=$IRIS_MOON
 fi

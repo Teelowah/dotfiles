@@ -15,18 +15,18 @@ WIFI_NAME=$(ipconfig getsummary en0 | awk -F ' SSID : ' '/ SSID : / {print $2}')
 if [[ -n "$WIFI_NAME" ]]; then
   ICON=$WIFI_ON
   ICON_COLOR=$BLUE_MOON
-  LABEL="$WIFI_NAME"
+  #LABEL="$WIFI_NAME"
 else
   # Wifi name is empty (not connected)
   ICON=$WIFI_OFF
   ICON_COLOR=$SUBTLE_MOON
-  LABEL=""
+  #LABEL=""
 fi
 
 ### Updates the wifi item
 wifi=(
   icon="$ICON"
-  label="$LABEL"
+  #label="$LABEL"
   icon.color="$ICON_COLOR"
 )
 
