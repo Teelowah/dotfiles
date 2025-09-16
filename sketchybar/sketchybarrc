@@ -71,12 +71,15 @@ source $ITEMS_DIR/calendar.sh
 source $ITEMS_DIR/volume.sh
 source $ITEMS_DIR/battery.sh
 source $ITEMS_DIR/wifi.sh
+source $ITEMS_DIR/music_player.sh
 
 ### Creates zones for bar items
 sketchybar --add bracket calendar-zone calendar \
   --set calendar-zone "${zones[@]}" \
   --add bracket utilities-zone volume battery wifi \
   --set utilities-zone "${zones[@]}" \
+  --add bracket music-zone music_player \
+  --set music-zone "${zones[@]}" \
   --add bracket spaces '/space\..*/' \
   --set spaces "${zones[@]}"
 
